@@ -53,7 +53,7 @@ const Forecast = () => {
           ? { currency, frequency, start_date: startDate, end_date: endDate }
           : {};
 
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}${url}`, requestData);
+      const response = await axios.post(`https://doviz-backend.onrender.com${url}`, requestData);
       forecastCache.current[cacheKey] = response.data;
       setForecast(response.data);
     } catch (error) {
